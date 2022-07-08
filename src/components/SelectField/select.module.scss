@@ -1,0 +1,20 @@
+@use '@/styles/extend';
+
+.root {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    @extend .paragraph--detail;
+
+    font-weight: 600;
+    margin-bottom: 0.8em;
+  }
+}
+
+.indicatorsContainer p,
+.input,
+.singleValue,
+.placeholder {
+  @extend .paragraph;
+}

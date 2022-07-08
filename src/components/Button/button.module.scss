@@ -1,0 +1,5 @@
+@use '@/styles/extend';
+
+.root {
+  @extend .action--button;
+}

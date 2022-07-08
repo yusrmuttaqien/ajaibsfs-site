@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "types": [
+      "vite/client"
+    ],
+    "jsx": "react",
+    "checkJs": true,
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
