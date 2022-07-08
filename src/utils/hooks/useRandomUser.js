@@ -18,6 +18,8 @@ export const RANDOM_USER_MAX_PER_FETCH = 100;
  * @property {Number} APIPayload.pagination.current API pagination current page
  * @property {Function} APIPayload.pagination.jump API pagination jump function
  * @property {Number[]} APIPayload.pagination.length API pagination length
+ * @property {Number} APIPayload.pagination.left API pagination on time back
+ * @property {Number} APIPayload.pagination.right API pagination on time next
  * @property {'success' | 'loading' | 'error'} APIPayload.status API status
  */
 
@@ -58,13 +60,13 @@ export default function useRandomUser(props) {
 
     current = Math.ceil(current);
     current = current * 10;
-    start = current === 10 ? 1 : current - 10;
+    start = current === 10 ? 1 : current - 9;
 
     for (let i = start; i <= current; i++) {
       result.push(i);
     }
 
-    return result;
+    return { length: result, left: start - 1, right: current + 1 };
   };
 
   const _handlePageChanges = (page) => setPage(page > 0 ? page : 1);
@@ -180,7 +182,7 @@ export default function useRandomUser(props) {
     pagination: {
       current: page,
       jump: _handlePageChanges,
-      length: _defineLength(page),
+      ..._defineLength(page),
     },
     status,
   };

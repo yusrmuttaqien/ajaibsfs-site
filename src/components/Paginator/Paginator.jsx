@@ -8,11 +8,13 @@ import styles from './paginator.module.scss';
  * @param {Number} props.pagination.current Define current pagination position
  * @param {Function} props.pagination.jump Define pagination jumper function
  * @param {Number[]} props.pagination.length Define pagination viewed length
+ * @param {Number} props.pagination.left Define pagination jump whole back parameter
+ * @param {Number} props.pagination.right Define pagination jump whole next parameter
  * @returns Paginator component
  */
 
 export default function Paginator({ pagination }) {
-  const { current, jump, length } = pagination;
+  const { current, jump, length, left, right } = pagination;
 
   const _handlePageJump = (num) => () => jump(num);
 
@@ -20,8 +22,8 @@ export default function Paginator({ pagination }) {
     <div className={styles.root}>
       <Button
         className={styles.customButton}
-        disabled={current === 1}
-        onClick={_handlePageJump(current - 1)}
+        disabled={current <= 10}
+        onClick={_handlePageJump(left)}
       >
         ◁
       </Button>
@@ -34,15 +36,13 @@ export default function Paginator({ pagination }) {
             disabled={isActive}
             onClick={_handlePageJump(l)}
             key={key}
+            title={l}
           >
             {l}
           </Button>
         );
       })}
-      <Button
-        className={styles.customButton}
-        onClick={_handlePageJump(current + 1)}
-      >
+      <Button className={styles.customButton} onClick={_handlePageJump(right)}>
         ▷
       </Button>
     </div>

@@ -124,7 +124,10 @@ export default function Home() {
               Go to Github repo
             </Button>
           </div>
-          <Paginator pagination={pagination} />
+          <div>
+            <p>Currently on page {pagination.current}</p>
+            <Paginator pagination={pagination} />
+          </div>
         </header>
         <div>
           <RenderIF
