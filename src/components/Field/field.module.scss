@@ -1,0 +1,37 @@
+@use '@/styles/extend';
+
+.root {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    @extend .paragraph--detail;
+
+    font-weight: 600;
+    margin-bottom: 0.8em;
+  }
+
+  input {
+    @extend .paragraph;
+
+    height: var(--input-height);
+    width: var(--input-width);
+    padding: 0 1rem;
+    background-color: transparent;
+    border: 0.063rem solid var(--color-white-fade);
+    color: var(--color-white);
+
+    &:not(:placeholder-shown) {
+      border-color: var(--color-white);
+    }
+
+    &::placeholder {
+      color: var(--color-white-fader);
+    }
+
+    &:focus {
+      border-color: var(--color-pink);
+      outline: none;
+    }
+  }
+}

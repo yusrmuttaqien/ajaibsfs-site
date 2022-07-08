@@ -1,0 +1,117 @@
+@use '@/styles/extend';
+
+.root {
+  height: 100vh;
+  min-height: 600px;
+  padding-top: var(--padding-vertical);
+  display: flex;
+  flex-direction: column;
+
+  > h1 {
+    @extend .title;
+
+    margin-bottom: 1em;
+  }
+
+  > div {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    header,
+    > div table {
+      width: 100%;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+
+      > div:first-child {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        width: 100%;
+      }
+    }
+
+    > div {
+      flex: 1;
+      overflow: auto;
+      margin-bottom: 1rem;
+      position: relative;
+
+      > p {
+        @extend .paragraph;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 600;
+      }
+
+      table {
+        border-collapse: collapse;
+
+        thead tr th,
+        tbody tr td {
+          @extend .paragraph;
+
+          text-align: left;
+          padding: 1rem;
+        }
+
+        thead {
+          position: sticky;
+          top: 0;
+          height: 2rem;
+
+          tr {
+            background-color: var(--color-pink);
+            color: var(--color-black);
+
+            th {
+              user-select: none;
+              cursor: pointer;
+              position: relative;
+              font-weight: 700;
+
+              &[data-active='true']::after {
+                position: absolute;
+                top: 50%;
+                right: 1rem;
+                transform: translateY(-50%);
+              }
+
+              &[data-order='asc']::after {
+                content: '↑';
+              }
+
+              &[data-order='desc']::after {
+                content: '↓';
+              }
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            &:not(:last-child) {
+              border-bottom: 0.063rem solid var(--color-pink);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.customButton {
+  width: 100%;
+  height: 100%;
+}

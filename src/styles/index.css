@@ -1,0 +1,46 @@
+:root {
+  --blur: 12px;
+  --input-height: 2.3rem;
+  --input-width: 15rem;
+  --padding-vertical: 3.2rem;
+  --padding-horizontal: clamp(0.3rem, -1.8rem + 10.5vw, 15rem);
+  --color-black: hsl(215, 27%, 12%);
+  --color-black-fade: hsla(215, 28%, 12%, 0.738);
+  --color-pink: hsl(8, 94%, 72%);
+  --color-white: hsl(0, 0%, 96%);
+  --color-white-fade: hsla(0, 0%, 96%, 0.738);
+  --color-white-fader: hsla(0, 0%, 96%, 0.524);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  scrollbar-color: var(--color-pink) var(--color-black);
+}
+
+html,
+#root,
+body {
+  width: 100%;
+  min-width: 1160px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.7rem, 0.6286rem + 0.3571vw, 1.2rem);
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+*::-webkit-scrollbar {
+  background-color: var(--color-black);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-pink);
+}
+
+#root {
+  padding: 0 var(--padding-horizontal);
+}

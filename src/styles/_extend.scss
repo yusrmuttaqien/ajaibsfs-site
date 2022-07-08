@@ -1,0 +1,61 @@
+// Fonts
+.title {
+  // For H1
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.2em;
+  letter-spacing: 0.08em;
+}
+
+.paragraph {
+  // For P
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.3em;
+  // max-width: 42ch;
+
+  &--detail {
+    // For P
+    @extend .paragraph;
+    font-size: 0.9rem;
+    line-height: 1em;
+  }
+}
+
+// Elements
+.action {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2em;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+  width: fit-content;
+  user-select: none;
+
+  &--button {
+    @extend .action;
+
+    padding: 0.2em 1em;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0.063rem solid var(--color-white-fade);
+    height: fit-content;
+
+    &:active:not(:disabled) {
+      color: var(--color-white);
+      border-color: var(--color-white);
+    }
+
+    &:disabled {
+      color: var(--color-white-fader);
+      border-color: var(--color-white-fader);
+      cursor: no-drop;
+    }
+  }
+}
