@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <section className={styles.root}>
       <img
-        src="src/yusrmuttaqien.svg"
+        src="/svgs/yusrmuttaqien.svg"
         alt="Yusril Muttaqien"
         onClick={_handleYDHM}
       />
