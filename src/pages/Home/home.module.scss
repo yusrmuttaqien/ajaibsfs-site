@@ -6,6 +6,16 @@
   padding-top: var(--padding-vertical);
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  > img {
+    position: absolute;
+    top: calc(var(--padding-vertical) - 2rem);
+    right: 0;
+    height: 2rem;
+    width: auto;
+    cursor: pointer;
+  }
 
   > h1 {
     @extend .title;

@@ -48,6 +48,13 @@ export default function Home() {
       'noopener,noreferrer'
     );
 
+  const _handleYDHM = () =>
+    window.open(
+      'https://yusrilmuttaqien.vercel.app/',
+      '_blank',
+      'noopener,noreferrer'
+    );
+
   const _handleCount = (value) => {
     if (value < RANDOM_USER_MIN_PER_FETCH) {
       setCount(RANDOM_USER_MIN_PER_FETCH);
@@ -73,6 +80,11 @@ export default function Home() {
 
   return (
     <section className={styles.root}>
+      <img
+        src="/svgs/yusrmuttaqien.svg"
+        alt="Yusril Muttaqien"
+        onClick={_handleYDHM}
+      />
       <h1>Ajaib Test Case - Search, filter, and sort.</h1>
       <div>
         <header>
