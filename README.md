@@ -130,8 +130,6 @@ There are a few notes about filtering features between this app and the example 
 
     * In order to negotiate those limitations, filter by gender performed locally and only apply to the current data.
 
-    <br/>
-
 - Order by column, at first will be implemented to be capable to do multiple columns at once. But because the data shown on one page is not that much yet, and the data received is quite random :), it's hard to see the result of multi-column ordering. As result, I resort to implementing only ordering one column at one time.
 
 - Despite all of those limitations, all filtering options could be run sequentially on the same data, with the proper order of filtering in place.
@@ -142,4 +140,4 @@ There are a few notes about filtering features between this app and the example 
 
 ## Credits
 
-### <a href="https://github.com/yusrmuttaqien">Yusril Muttaqien</a> - 2022 - MIT License
+### <a href="https://github.com/yusrmuttaqien">Yusril Muttaqien</a> - 2022
